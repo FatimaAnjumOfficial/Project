@@ -22,15 +22,11 @@ const Header = () => {
           >
             <div className="logo-container">
               <img src={logo} alt="Logo" />
-            </div>
-            <div>
               <h5>Where Luxurious Meets Stay</h5>
             </div>
           </div>
         </div>
-        <div>
-          <Search />
-        </div>
+        <div>{/*<Search />*/}</div>
         <div className="button-container">
           <button
             onClick={() => {

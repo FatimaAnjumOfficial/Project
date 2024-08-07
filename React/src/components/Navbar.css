@@ -2,7 +2,7 @@
   position: fixed; /* Keeps the navbar fixed at the top of the viewport */
   top: 118px; /* Adjust this value to the height of your header */
   width: 100%; /* Spans the full width of the viewport */
-  background-color: #333; /* Background color of the navbar */
+  background-color: #bbbbbb; /* Background color of the navbar */
   color: white; /* Text color of the navbar items */
   z-index: 1001; /* Ensures the navbar is above other content */
   left: 0;
@@ -26,7 +26,7 @@
 }
 
 .navbar-link {
-  color: white; /* Sets the color of the links */
+  color: rgb(5, 5, 5); /* Sets the color of the links */
   text-decoration: none; /* Removes the underline from the links */
   font-size: 16px; /* Sets the font size */
   transition: color 0.3s; /* Adds a smooth transition effect */

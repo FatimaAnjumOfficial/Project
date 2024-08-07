@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Register from "./Register";
-import logo from "./Musaafir.png";
+import logo from "./images/HomePage/Musaafir.png";
 import "./Header.css";
 import "./Search.css";
 import "./StylishButton.css";

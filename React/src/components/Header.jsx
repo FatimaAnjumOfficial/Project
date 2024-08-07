@@ -5,6 +5,7 @@ import "./Header.css";
 import "./Search.css";
 import "./StylishButton.css";
 import "./Body.css";
+import Search from "./Search";
 
 const Header = () => {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -27,7 +28,9 @@ const Header = () => {
             </div>
           </div>
         </div>
-
+        <div>
+          <Search />
+        </div>
         <div className="button-container">
           <button
             onClick={() => {
@@ -37,9 +40,6 @@ const Header = () => {
             className="stylish-button"
           >
             Register
-          </button>
-          <button onClick={() => {}} className="stylish-button">
-            Sign Up
           </button>
         </div>
       </header>

@@ -20,7 +20,7 @@
 }
 
 .logo h5 {
-  font-size: 15px;
+  font-size: 2px;
   color: #e6dede;
 }
 /* Basic Reset */
@@ -38,6 +38,7 @@ body {
 
 .logo-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100px; /* Adjust width as needed */

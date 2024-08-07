@@ -1,28 +1,30 @@
 .navbar {
   position: fixed; /* Keeps the navbar fixed at the top of the viewport */
-  top: 118px; /* Adjust this value to the height of your header */
+  /*top: 118px;  Adjust this value to the height of your header */
+  top: 118px;
   width: 100%; /* Spans the full width of the viewport */
   background-color: #bbbbbb; /* Background color of the navbar */
   color: white; /* Text color of the navbar items */
   z-index: 1001; /* Ensures the navbar is above other content */
   left: 0;
+  display: flex;
 }
 
 .navbar-container {
   display: flex; /* Aligns items horizontally */
   justify-content: center; /* Centers the items horizontally */
-  padding: 10px 0; /* Adds padding for spacing */
+  padding: 10px; /* Adds padding for spacing */
 }
 
 .navbar-menu {
   list-style: none; /* Removes bullet points from the list */
   margin: 0;
-  padding: 0;
   display: flex; /* Displays the menu items in a row */
 }
 
 .navbar-item {
   margin: 0 15px; /* Adds spacing between menu items */
+  justify-items: center;
 }
 
 .navbar-link {

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import Register from "./Register";
 import logo from "./Musaafir.png";
-import "./StylishButton.css";
 import "./Header.css";
+import "./Search.css";
+import "./StylishButton.css";
 import "./Body.css";
 
 const Header = () => {
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
   return (
     <>
       <header className="header">
@@ -27,26 +31,19 @@ const Header = () => {
         <div className="button-container">
           <button
             onClick={() => {
-              {
-                <Register />;
-              }
+              setIsRegisterOpen(true);
+              <Register />;
             }}
             className="stylish-button"
           >
             Register
           </button>
-          <button
-            onClick={() => {
-              {
-                <Form />;
-              }
-            }}
-            className="stylish-button"
-          >
+          <button onClick={() => {}} className="stylish-button">
             Sign Up
           </button>
         </div>
       </header>
+      {isRegisterOpen && <Register onClose={() => setIsRegisterOpen(false)} />}
     </>
   );
 };

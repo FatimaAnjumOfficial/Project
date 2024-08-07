@@ -1,0 +1,37 @@
+.navbar {
+  position: fixed; /* Keeps the navbar fixed at the top of the viewport */
+  top: 118px; /* Adjust this value to the height of your header */
+  width: 100%; /* Spans the full width of the viewport */
+  background-color: #333; /* Background color of the navbar */
+  color: white; /* Text color of the navbar items */
+  z-index: 1001; /* Ensures the navbar is above other content */
+  left: 0;
+}
+
+.navbar-container {
+  display: flex; /* Aligns items horizontally */
+  justify-content: center; /* Centers the items horizontally */
+  padding: 10px 0; /* Adds padding for spacing */
+}
+
+.navbar-menu {
+  list-style: none; /* Removes bullet points from the list */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Displays the menu items in a row */
+}
+
+.navbar-item {
+  margin: 0 15px; /* Adds spacing between menu items */
+}
+
+.navbar-link {
+  color: white; /* Sets the color of the links */
+  text-decoration: none; /* Removes the underline from the links */
+  font-size: 16px; /* Sets the font size */
+  transition: color 0.3s; /* Adds a smooth transition effect */
+}
+
+.navbar-link:hover {
+  color: #f39c12; /* Changes the color on hover */
+}

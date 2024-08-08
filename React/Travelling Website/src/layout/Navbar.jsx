@@ -12,8 +12,9 @@ import {
 import { Button } from "../components/shared/Button";
 import { LayoutContainer } from "./LayoutContainer";
 import "./Logo.css";
-import Register from "../components//Register";
+import Register from "../components/Register";
 import "../components/StylishButton.css";
+import { BiBorderRadius } from "react-icons/bi";
 
 export function Navbar() {
   return (
@@ -25,7 +26,7 @@ export function Navbar() {
         className="justify-between hidden md:flex"
         style={{
           display: "flex",
-          background: "linear-gradient(to right, #000000, #000000ff,  #49032e)",
+          background: "linear-gradient(to right, #000000, #000000ff, #49032e)",
           border: "1px solid black",
           padding: "0px 40px",
         }}
@@ -56,8 +57,25 @@ export function Navbar() {
           >
             <ul className="flex gap-8 items-center">
               <NavItem title="Home" url="#" />
-              <NavItem title="Hotels" url="/hotels" />
-              <NavItem title="Flights" url="flights" />
+              <NavItem
+                title="Hotels"
+                url="/hotels"
+                style={{ borderRadius: "20px" }}
+                submenu={[
+                  { title: "Luxury Hotels", url: "/hotels/luxury-hotels" },
+                  { title: "Budget Hotels", url: "/hotels/" },
+                  { title: "Hotel Deals", url: "/hotels/hotel-deals" },
+                ]}
+              />
+              <NavItem
+                title="Flights"
+                url="/flights"
+                submenu={[
+                  { title: "Domestic Flights", url: "#" },
+                  { title: "International Flights", url: "#" },
+                  { title: "Flight Deals", url: "#" },
+                ]}
+              />
               <NavItem title="Packages" url="/packages" />
               <NavItem title="About Us" url="/about-us" />
               <NavItem title="Contact Us" url="/contact-us" />
@@ -86,18 +104,32 @@ export function Navbar() {
   );
 }
 
-function NavItem({ Icon, title, url, isActive = false }) {
+function NavItem({ Icon, title, url, isActive = false, submenu = [] }) {
   return (
-    <a
-      className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-colors duration-300 ${
-        isActive
-          ? "bg-gray-700 text-white"
-          : "text-gray-300 hover:bg-gray-600 hover:text-white"
-      }`}
-      href={url}
-    >
-      {Icon && <Icon />}
-      <span>{title}</span>
-    </a>
+    <li className="relative group">
+      <a
+        className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-colors duration-300 ${
+          isActive
+            ? "bg-gray-700 text-white"
+            : "text-gray-300 hover:bg-gray-600 hover:text-white"
+        }`}
+        href={url}
+      >
+        {Icon && <Icon />}
+        <span>{title}</span>
+        {submenu.length > 0 && <ChevronDown className="ml-2" />}
+      </a>
+      {submenu.length > 0 && (
+        <ul className="absolute left-0 top-full mt-2 bg-white text-black shadow-lg group-hover:block hidden w-48">
+          {submenu.map((item, index) => (
+            <li key={index} className="border-b last:border-b-0">
+              <a className="block px-4 py-2 hover:bg-gray-200" href={item.url}>
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
   );
 }

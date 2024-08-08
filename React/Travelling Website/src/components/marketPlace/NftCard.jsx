@@ -14,18 +14,15 @@ function NftCard({ nft }) {
         <div className="flex flex-col gap-1">
           <span className="text-xs text-[#A1A1AA]">Author</span>
           <div className="text-sm xl:text-base flex gap-1">
-            <img src={nft.author} alt="author" />
             <p>{nft.author}</p>
           </div>
         </div>
         <div className="flex flex-col gap-1">
-          <span className="text-xs text-[#A1A1AA]">Price</span>
+          <span className="text-xs text-[#A1A1AA]">Rent</span>
           <div className="text-sm xl:text-base flex gap-1 items-center">
             <div className="flex gap-1">
-              <p>{nft.price_eth}</p>
-              <span>ETH</span>
+              <p>{nft.rent}</p>
             </div>
-            <span className="text-[#A1A1AA] text-xs">${nft.price_usd}</span>
           </div>
         </div>
       </div>

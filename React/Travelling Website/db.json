@@ -1,0 +1,26 @@
+{
+  "registration": [
+    {
+      "id": "9483",
+      "firstName": "Fatima",
+      "lastName": "Anjum",
+      "email": "fatimaanjumofficial@gmail.com",
+      "phoneNo": "09876",
+      "age": "20",
+      "gender": "female",
+      "address": "pakistan",
+      "country": "Pakistan",
+      "city": "Karachi"
+    }
+  ],
+
+  "signup": [],
+
+  "hotel": [
+    {
+      "id": "1",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0JxgI2qCHTsxA7QPfdfjYhu9rf6CT_-1mAA&s",
+      "hotelName": "Awari"
+    }
+  ]
+}

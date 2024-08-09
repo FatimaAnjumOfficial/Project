@@ -26,8 +26,9 @@ export function Navbar() {
         className="justify-between hidden md:flex"
         style={{
           display: "flex",
-          background: "linear-gradient(to right, #000000, #000000ff, #49032e)",
-          border: "1px solid black",
+          backgroundColor: "#ffffff",
+          /*background: "linear-gradient(to right, #000000ce, #080D0E, #061F26)",*/
+
           padding: "0px 40px",
         }}
       >
@@ -41,14 +42,13 @@ export function Navbar() {
             >
               <div className="logo-container">
                 <img src={logo} alt="Logo" />
-                {/*} <h5>Where Luxurious Meets Stay</h5>*/}
               </div>
             </div>
           </div>
           <div
             style={{
-              fontFamily: "Times New Roman, serif",
-              fontSize: "18px",
+              fontFamily: "arial",
+              fontSize: "17px",
               listStyle: "none",
               margin: 0,
               padding: 0,
@@ -111,7 +111,7 @@ function NavItem({ Icon, title, url, isActive = false, submenu = [] }) {
         className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-colors duration-300 ${
           isActive
             ? "bg-gray-700 text-white"
-            : "text-gray-300 hover:bg-gray-600 hover:text-white"
+            : "text-black hover:bg-gray-600 hover:text-white"
         }`}
         href={url}
       >

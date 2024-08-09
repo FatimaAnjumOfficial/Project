@@ -86,7 +86,8 @@ input {
 
 .submit-button {
   padding: 12px 24px;
-  background: linear-gradient(to top, #000000, #49032e, #8c3061, #49032e);
+  /*background: linear-gradient(to top, #000000, #49032e, #8c3061, #49032e);*/
+  background: linear-gradient(to top, #000000, #061f26, #296e81, #061f26);
   color: white;
   border: none;
   border-radius: 4px;

@@ -11,11 +11,21 @@
       "address": "pakistan",
       "country": "Pakistan",
       "city": "Karachi"
+    },
+    {
+      "id": "665c",
+      "firstName": "Fatima",
+      "lastName": "Anjum",
+      "email": "fatimaanjum2020.1@gmail.com",
+      "phoneNo": "09876",
+      "age": "20",
+      "gender": "female",
+      "address": "pakistan",
+      "country": "Pakistan",
+      "city": "Karachi"
     }
   ],
-
   "signup": [],
-
   "hotel": [
     {
       "id": "1",

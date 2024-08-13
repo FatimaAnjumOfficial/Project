@@ -182,6 +182,66 @@ function Body() {
           </div>
         </div>
       </div>
+      <h1
+        style={{
+          fontSize: "40px",
+          fontFamily: "cursive",
+          marginBottom: "10px",
+          color: "#2c3e50",
+          marginTop: "160px",
+        }}
+      >
+        <b>Travel to make Memories</b>
+        <br />
+        <b>all around the World</b>
+      </h1>
+      <h2 style={{ fontSize: "22px", color: "#7f8c8d", marginBottom: "30px" }}>
+        Find trips that fit a flexible lifestyle
+      </h2>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end", // Align items to the right
+          gap: "30px",
+          flexWrap: "wrap",
+          marginTop: "20px",
+          marginBottom: "130px",
+          marginRight: "20px", // Adjust as needed
+          padding: "0 20px", // Optional: add padding to avoid image being too close to the edge
+        }}
+      >
+        <div style={{ flexDirection: "column" }}>
+          <div
+            style={{
+              width: "360px",
+              height: "450px",
+              overflow: "hidden",
+              borderRadius: "20px",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+              transition: "transform 0.3s ease",
+              display: "flex",
+              alignItems: "end",
+              justifyContent: "end",
+            }}
+          >
+            <img
+              src="https://i.pinimg.com/originals/ce/b8/3f/ceb83f22108e7ec3ea224d4f735d292b.jpg"
+              alt="Camp"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                transition: "transform 0.3s ease",
+              }}
+              onMouseOver={(e) =>
+                (e.currentTarget.style.transform = "scale(1.1)")
+              }
+              onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            />
+          </div>
+        </div>
+      </div>
 
       <h1
         style={{

@@ -15,6 +15,8 @@ import "./Logo.css";
 import Register from "../components/Register";
 import "../components/StylishButton.css";
 import { BiBorderRadius } from "react-icons/bi";
+import img from "../components/images/Logo.png";
+import SignUp from "../components/SignUp";
 
 export function Navbar() {
   return (
@@ -29,7 +31,7 @@ export function Navbar() {
           backgroundColor: "#ffffff",
           /*background: "linear-gradient(to right, #000000ce, #080D0E, #061F26)",*/
 
-          padding: "0px 40px",
+          padding: "0px 80px",
         }}
       >
         <div className="flex gap-8 items-center">
@@ -41,7 +43,7 @@ export function Navbar() {
               }}
             >
               <div className="logo-container">
-                <img src={logo} alt="Logo" />
+                <img src={img} alt="Logo" />
               </div>
             </div>
           </div>
@@ -55,7 +57,7 @@ export function Navbar() {
               justifyContent: "center",
             }}
           >
-            <ul className="flex gap-8 items-center">
+            <ul className="flex gap-3 items-center">
               <NavItem title="Home" url="#" />
               <NavItem
                 title="Hotels"
@@ -82,8 +84,11 @@ export function Navbar() {
             </ul>
           </div>
         </div>
-        <div className="flex gap-4 py-11">
+        <div className="flex items-center gap-1 rounded-xl">
           <Register />
+        </div>
+        <div className="flex gap-0 items-center">
+          <SignUp />
 
           {/* <Button
             className="flex items-center gap-1 rounded-xl px-3 bg-zinc-700"

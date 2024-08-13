@@ -1,5 +1,6 @@
 import React from "react";
-import camp from "../components/images/camp.png";
+import "../components/StylishButton.css";
+import Slider from "./Slider";
 
 function Body() {
   return (
@@ -199,48 +200,71 @@ function Body() {
         Find trips that fit a flexible lifestyle
       </h2>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-end", // Align items to the right
-          gap: "30px",
-          flexWrap: "wrap",
-          marginTop: "20px",
-          marginBottom: "130px",
-          marginRight: "20px", // Adjust as needed
-          padding: "0 20px", // Optional: add padding to avoid image being too close to the edge
-        }}
-      >
-        <div style={{ flexDirection: "column" }}>
-          <div
+      <div style={{ display: "flex", gap: "280px" }}>
+        <div
+          style={{
+            justifyContent: "flex-start",
+            marginTop: "5px",
+            padding: "70px",
+          }}
+        >
+          <h1
             style={{
-              width: "360px",
-              height: "450px",
-              overflow: "hidden",
+              fontSize: "25px",
+              backgroundColor: "grey",
               borderRadius: "20px",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-              transition: "transform 0.3s ease",
-              display: "flex",
-              alignItems: "end",
-              justifyContent: "end",
+              padding: "0px 20px",
             }}
           >
-            <img
-              src="https://i.pinimg.com/originals/ce/b8/3f/ceb83f22108e7ec3ea224d4f735d292b.jpg"
-              alt="Camp"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                transition: "transform 0.3s ease",
-              }}
-              onMouseOver={(e) =>
-                (e.currentTarget.style.transform = "scale(1.1)")
-              }
-              onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-            />
-          </div>
+            01
+          </h1>
+          <h1
+            style={{
+              fontSize: "25px",
+              textAlign: "left",
+            }}
+          >
+            <b>Travel with more Confidence</b>
+          </h1>
+          <p style={{ textAlign: "left" }}>
+            Explore the world with peace of mind and assurance.
+          </p>
+          <p style={{ textAlign: "left" }}>
+            Our services ensure every journey is smooth, safe,
+          </p>
+          <p style={{ textAlign: "left" }}>
+            {" "}
+            and enjoyable, so you can travel with more confidence.
+          </p>
+          <br />
+          <br />
+          <h1
+            style={{
+              fontSize: "25px",
+              backgroundColor: "grey",
+              borderRadius: "20px",
+              padding: "0px 20px",
+            }}
+          >
+            02
+          </h1>
+          <h1
+            style={{
+              fontSize: "25px",
+              textAlign: "left",
+            }}
+          >
+            <b>See what's really included</b>
+          </h1>
+          <p style={{ textAlign: "left" }}>
+            Discover exactly what’s included in your travel
+          </p>
+          <p style={{ textAlign: "left" }}>
+            package with full transparency and detailed information.
+          </p>
         </div>
+
+        <Slider />
       </div>
 
       <h1
@@ -249,7 +273,7 @@ function Body() {
           fontFamily: "cursive",
           marginBottom: "10px",
           color: "#2c3e50",
-          marginTop: "160px",
+          marginTop: "80px",
         }}
       >
         <b>Live Anywhere</b>

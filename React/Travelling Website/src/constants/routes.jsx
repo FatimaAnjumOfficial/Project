@@ -1,6 +1,10 @@
 import { HomePage } from "../pages/HomePage";
 import { Layout } from "../layout/Layout";
 import LuxuryHotels from "../pages/LuxuryHotels";
+import FlightsDomestic from "../pages/FlightsDomestic";
+import FlightsInternational from "../pages/FlightsInternational";
+import ContactUs from "../pages/ContactUs";
+import AboutUs from "../pages/AboutUs";
 
 export const routes = [
   {
@@ -14,6 +18,22 @@ export const routes = [
       {
         path: "/hotels/luxury-hotels",
         element: <LuxuryHotels />,
+      },
+      {
+        path: "/flights/domestic-flights",
+        element: <FlightsDomestic />,
+      },
+      {
+        path: "/flights/international-flights",
+        element: <FlightsInternational />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
       },
     ],
   },

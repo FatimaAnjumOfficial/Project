@@ -1,4 +1,3 @@
-/* Basic styling for overlay and popup */
 .overlay {
   position: fixed;
   top: 0;
@@ -48,17 +47,8 @@ button {
   cursor: pointer;
 }
 
-button[type="submit"] {
-  background: #28a745;
-  margin-bottom: 10px;
-}
-
 button[type="button"].close-btn {
   background: #dc3545;
-}
-
-button[type="submit"]:hover {
-  background: #218838;
 }
 
 button[type="button"].close-btn:hover {

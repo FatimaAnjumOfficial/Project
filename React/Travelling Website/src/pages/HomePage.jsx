@@ -10,9 +10,9 @@ export function HomePage() {
     <LayoutContainer>
       <Body />
       <MarketPlaceHeader />
-      <MarketPlaceSubmenu />
+      {/*<MarketPlaceSubmenu />
       <MarketPlaceFilters />
-      <NftSection />
+      <NftSection />*/}
     </LayoutContainer>
   );
 }

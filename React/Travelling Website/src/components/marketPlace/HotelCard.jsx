@@ -1,4 +1,3 @@
-// src/components/marketPlace/HotelCard.js
 import React from "react";
 import "./HotelCard.css";
 

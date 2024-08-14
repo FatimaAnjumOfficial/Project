@@ -1,16 +1,19 @@
-// src/pages/LuxuryHotels.js
 import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import HotelCard from "../components/marketPlace/HotelCard";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { hotels } from "../data/hotels";
 import "leaflet/dist/leaflet.css";
 import "./LuxuryHotels.css";
-import { hotels } from "../data/hotels";
 
 const LuxuryHotels = () => {
   const [selectedHotel, setSelectedHotel] = useState(null);
 
   const handleCardClick = (hotel) => {
     setSelectedHotel(hotel);
+  };
+
+  const handleClosePreview = () => {
+    setSelectedHotel(null);
   };
 
   return (
@@ -37,20 +40,68 @@ const LuxuryHotels = () => {
 
         {selectedHotel && (
           <section className="preview">
-            <h2>{selectedHotel.name}</h2>
-            <img src={selectedHotel.image} alt={selectedHotel.name} />
-            <p>
-              <b>Rooms:</b> {selectedHotel.rooms}
-            </p>
-            <p>
-              <b>Rent:</b> {selectedHotel.rent}
-            </p>
-            <p>
-              <b>Country:</b> {selectedHotel.country}
-            </p>
-            <p>
-              <b>City:</b> {selectedHotel.city}
-            </p>
+            <button
+              className="close-button"
+              onClick={handleClosePreview}
+              style={{ top: 1, padding: "0px 8px" }}
+            >
+              &times;
+            </button>
+            <h2 style={{ fontSize: "1.5rem" }}>
+              <b>{selectedHotel.name}</b>
+            </h2>
+            <br />
+            <div style={{ display: "flex", gap: "20px" }}>
+              <img src={selectedHotel.image} alt={selectedHotel.name} />
+
+              <div style={{ textAlign: "left", marginTop: "45px" }}>
+                <p>
+                  <b>Rooms:</b> {selectedHotel.rooms}
+                </p>
+                <p>
+                  <b>Rent:</b> {selectedHotel.rent}
+                </p>
+                <p>
+                  <b>Country:</b> {selectedHotel.country}
+                </p>
+                <p>
+                  <b>City:</b> {selectedHotel.city}
+                </p>
+              </div>
+            </div>
+            <p style={{ textAlign: "left" }}>{selectedHotel.description}</p>
+            <br />
+            <div
+              style={{
+                display: "flex",
+                gap: "10px",
+              }}
+            >
+              <div>
+                <img
+                  src={selectedHotel.interior}
+                  alt="Interior"
+                  style={{
+                    width: "250px",
+                    height: "140px",
+                    border: "black solid 1px",
+                  }}
+                />
+                <p style={{ fontSize: "14px", top: 0 }}>Interior</p>
+              </div>
+              <div>
+                <img
+                  src={selectedHotel.bedroom}
+                  alt="Bedroom"
+                  style={{
+                    width: "250px",
+                    height: "140px",
+                    border: "black solid 1px",
+                  }}
+                />
+                <p style={{ fontSize: "14px", top: 0 }}>Bedroom</p>
+              </div>
+            </div>
           </section>
         )}
         <section className="map-container">

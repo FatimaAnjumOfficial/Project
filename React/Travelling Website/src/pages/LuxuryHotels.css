@@ -40,16 +40,45 @@
 }
 
 .preview {
-  flex: 1;
+  border: 1px solid #353333;
+  border-radius: 8px;
   padding: 20px;
-  border-left: 1px solid #ccc;
-  position: sticky;
-  top: 0;
+  margin-top: 20px;
+  text-align: center;
+  width: 40%;
+  height: 92%;
+  position: fixed;
+  right: 20px;
+  top: 16px;
+  background: #b9d1ce;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .preview img {
-  width: 30%;
-  height: 15%;
+  width: 70%;
+  height: 20%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: #ff0000; /* Red color on hover */
+}
+
+.preview-active .hotel-list {
+  transform: translateY(200px); /* Adjust based on your design */
 }
 
 /* Responsive design for smaller screens */

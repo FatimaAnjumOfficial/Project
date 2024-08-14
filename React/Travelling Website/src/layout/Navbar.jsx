@@ -58,24 +58,28 @@ export function Navbar() {
             }}
           >
             <ul className="flex gap-3 items-center">
-              <NavItem title="Home" url="#" />
+              <NavItem title="Home" url="/" />
               <NavItem
                 title="Hotels"
-                url="/hotels"
                 style={{ borderRadius: "20px" }}
                 submenu={[
                   { title: "Luxury Hotels", url: "/hotels/luxury-hotels" },
-                  { title: "Budget Hotels", url: "/hotels/" },
+                  { title: "Budget Hotels", url: "/hotels/budget-hotels" },
                   { title: "Hotel Deals", url: "/hotels/hotel-deals" },
                 ]}
               />
               <NavItem
                 title="Flights"
-                url="/flights"
                 submenu={[
-                  { title: "Domestic Flights", url: "#" },
-                  { title: "International Flights", url: "#" },
-                  { title: "Flight Deals", url: "#" },
+                  {
+                    title: "Domestic Flights",
+                    url: "/flights/domestic-flights",
+                  },
+                  {
+                    title: "International Flights",
+                    url: "/flights/international-flights",
+                  },
+                  { title: "Flight Deals", url: "/flights/flight-deals" },
                 ]}
               />
               <NavItem title="Packages" url="/packages" />

@@ -1,49 +1,48 @@
-import { Arrow } from '../assets/Icons';
-import logo from '../assets/logo.svg';
-import { LayoutContainer } from './LayoutContainer';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import "./Footer.css";
 
 export function Footer() {
   return (
-    <LayoutContainer>
-      <div className='hidden md:block py-8 px-7 border border-secondary-border rounded-xl border-solid p-2'>
-        <div className='flex justify-between'>
-          <div className=''>
-            <img src={logo} alt='logo' />
-            <h1 className='text-base pt-2'>The new creative community.</h1>
-          </div>
-          <div className='flex flex-col gap-2'>
-            <span className='text-xs'>Subscribe to newsletter</span>
-            <div className='flex flex-col gap-2'>
-              <div className='flex relative'>
-                <input
-                  placeholder='Email address'
-                  className='bg-zinc-800 p-3 w-[300px] rounded-xl'
-                />
-                <div className='absolute left-[260px] top-[15px]'>
-                  <Arrow />
-                </div>
-              </div>
-              <div className='text-[#71717A] text-xs'>
-                <p>By signing up for email, you agree to QSTN's </p>
-                <span className='text-[#A855F7]'>
-                  {' '}
-                  Terms of Service
-                </span> and{' '}
-                <span className='text-[#A855F7]'> Privacy Policy</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='text-xs flex justify-between pt-8'>
-          <span className='text-[#52525B]'>
-            Copyright © 2023 Sink. All rights reserved
+    <footer className="footer-container py-10">
+      <div className="px-6 px-12">
+        <div className="border-t border-gray-600 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+          <span className="text-sm text-black-400">
+            © 2024 Musaafir. All rights reserved.
+            <br />
           </span>
-          <div className='flex gap-2'>
-            <span className='text[#E4E4E7]'>Terms of Service</span>
-            <span className='text[#E4E4E7]'>Privacy Policy</span>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <a
+              href="https://facebook.com"
+              className="text-black-400 hover:text-gray-400"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://twitter.com"
+              className="text-black-400 hover:text-gray-400"
+            >
+              <FaTwitter />
+            </a>
+            <a
+              href="https://instagram.com"
+              className="text-black-400 hover:text-gray-400"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://linkedin.com"
+              className="text-black-400 hover:text-gray-400"
+            >
+              <FaLinkedinIn />
+            </a>
           </div>
         </div>
       </div>
-    </LayoutContainer>
+    </footer>
   );
 }

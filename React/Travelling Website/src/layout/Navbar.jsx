@@ -1,39 +1,77 @@
-import avatar from "../assets/avatar.png";
-import logo from "../components/images/Musaafir.png";
-import {
-  Bag,
-  BarChart,
-  ChevronDown,
-  Cursor,
-  Menu,
-  Plus,
-  DownArrow,
-} from "../assets/Icons";
-import { Button } from "../components/shared/Button";
+import React, { useState } from "react";
+import { ChevronDown, Menu, Cross } from "../assets/Icons";
 import { LayoutContainer } from "./LayoutContainer";
-import "./Logo.css";
-import Register from "../components/Register";
-import "../components/StylishButton.css";
-import { BiBorderRadius } from "react-icons/bi";
 import img from "../components/images/Logo.png";
+import Register from "../components/Register";
 import SignUp from "../components/SignUp";
+import "../components/StylishButton.css";
+import "./Logo.css";
 
 export function Navbar() {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    isSidebarOpen = false;
+  };
+
   return (
     <LayoutContainer>
-      <div className="p-4 md:hidden">
-        <Menu />
+      <div
+        className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg md:hidden transform transition-transform ease-in-out duration-300 ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="p-4 relative">
+          <button onClick={toggleSidebar} className="mb-4">
+            <Menu />
+          </button>
+          <button onClick={closeSidebar} className="absolute top-4 right-4">
+            <Cross />
+          </button>
+          <ul className="mt-8">
+            <NavItem title="Home" url="/" />
+            <NavItem
+              title="Hotels"
+              submenu={[
+                { title: "Luxury Hotels", url: "/hotels/luxury-hotels" },
+                { title: "Budget Hotels", url: "/hotels/budget-hotels" },
+              ]}
+            />
+            <NavItem
+              title="Flights"
+              submenu={[
+                {
+                  title: "Domestic Flights",
+                  url: "/flights/domestic-flights",
+                },
+                {
+                  title: "International Flights",
+                  url: "/flights/international-flights",
+                },
+              ]}
+            />
+            <NavItem title="About Us" url="/about-us" />
+            <NavItem title="Contact Us" url="/contact-us" />
+          </ul>
+        </div>
       </div>
       <div
-        className="justify-between hidden md:flex"
+        className={`flex justify-between items-center md:flex ${
+          isSidebarOpen ? "blur-md" : ""
+        }`}
         style={{
-          display: "flex",
-          backgroundColor: "#ffffff",
-          /*background: "linear-gradient(to right, #000000ce, #080D0E, #061F26)",*/
-
           padding: "0px 80px",
         }}
       >
+        <div className="p-4 md:hidden">
+          <button onClick={toggleSidebar}>
+            <Menu />
+          </button>
+        </div>
         <div className="flex gap-8 items-center">
           <div className="logo">
             <div
@@ -57,7 +95,7 @@ export function Navbar() {
               justifyContent: "center",
             }}
           >
-            <ul className="flex gap-3 items-center">
+            <ul className="hidden md:flex gap-3 items-center">
               <NavItem title="Home" url="/" />
               <NavItem
                 title="Hotels"
@@ -65,7 +103,6 @@ export function Navbar() {
                 submenu={[
                   { title: "Luxury Hotels", url: "/hotels/luxury-hotels" },
                   { title: "Budget Hotels", url: "/hotels/budget-hotels" },
-                  { title: "Hotel Deals", url: "/hotels/hotel-deals" },
                 ]}
               />
               <NavItem
@@ -79,34 +116,16 @@ export function Navbar() {
                     title: "International Flights",
                     url: "/flights/international-flights",
                   },
-                  { title: "Flight Deals", url: "/flights/flight-deals" },
                 ]}
               />
-              <NavItem title="Packages" url="/packages" />
               <NavItem title="About Us" url="/about-us" />
               <NavItem title="Contact Us" url="/contact-us" />
             </ul>
           </div>
         </div>
-        <div className="flex items-center gap-1 rounded-xl">
-          <Register />
-        </div>
         <div className="flex gap-0 items-center">
+          <Register />
           <SignUp />
-
-          {/* <Button
-            className="flex items-center gap-1 rounded-xl px-3 bg-zinc-700"
-            variant="ghost"
-          >
-            <span>Network</span>
-            <Plus />
-          </Button>
-          <div className="flex gap-1 items-center">
-              <img className="h-6 w-6" src={avatar} />
-            <Button variant="ghost" size="icon">
-              <ChevronDown />
-            </Button>
-          </div>*/}
         </div>
       </div>
     </LayoutContainer>

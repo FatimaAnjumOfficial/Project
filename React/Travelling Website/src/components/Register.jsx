@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./StylishButton.css";
-import "./HomePage.css";
 
 function Register() {
   const [showModal, setShowModal] = useState(false);
@@ -77,25 +76,28 @@ function Register() {
 
   return (
     <>
-      <div>
-        <div style={{ display: "flex", gap: "7px", marginLeft: "175px" }}>
-          <button onClick={() => setShowModal(true)} className="stylish-button">
-            Register
-          </button>
-        </div>
-        {showModal && (
-          <div className="modal">
-            <div className="modal-content">
-              <span className="close" onClick={() => setShowModal(false)}>
-                &times;
-              </span>
-              <h2 style={{ textAlign: "center", fontSize: "25px", top: "0" }}>
-                <b>Registration</b>
-              </h2>
-              {error && <p className="error">{error}</p>}
-              <form onSubmit={handleSubmit}>
-                <div style={{ display: "flex", gap: "45px" }}>
-                  <label>
+      <div className="flex justify-center">
+        <button onClick={() => setShowModal(true)} className="stylish-button">
+          Register
+        </button>
+      </div>
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-lg relative">
+            <button
+              className="absolute top-2 right-2 bg-red-600 text-white p-2 rounded-full hover:bg-red-700"
+              onClick={() => setShowModal(false)}
+            >
+              &times;
+            </button>
+            <h2 className="text-2xl font-bold text-center mb-4">
+              Registration
+            </h2>
+            {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="flex flex-wrap gap-4">
+                <div className="flex-1">
+                  <label className="block text-sm font-medium mb-1">
                     First Name:
                     <input
                       type="text"
@@ -103,9 +105,12 @@ function Register() {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
+                      className="border border-gray-300 rounded-md p-2 w-full text-base"
                     />
                   </label>
-                  <label>
+                </div>
+                <div className="flex-1">
+                  <label className="block text-sm font-medium mb-1">
                     Last Name:
                     <input
                       type="text"
@@ -113,21 +118,25 @@ function Register() {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
+                      className="border border-gray-300 rounded-md p-2 w-full text-base"
                     />
                   </label>
                 </div>
-                <label>
-                  Email:
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </label>
-                <div style={{ display: "flex", gap: "45px" }}>
-                  <label>
+              </div>
+              <label className="block text-sm font-medium mb-1">
+                Email:
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="border border-gray-300 rounded-md p-2 w-full text-base"
+                />
+              </label>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex-1">
+                  <label className="block text-sm font-medium mb-1">
                     Phone No:
                     <input
                       type="text"
@@ -135,9 +144,12 @@ function Register() {
                       value={formData.phoneNo}
                       onChange={handleInputChange}
                       required
+                      className="border border-gray-300 rounded-md p-2 w-full text-base"
                     />
                   </label>
-                  <label>
+                </div>
+                <div className="flex-1">
+                  <label className="block text-sm font-medium mb-1">
                     Age:
                     <input
                       type="number"
@@ -145,26 +157,23 @@ function Register() {
                       value={formData.age}
                       onChange={handleInputChange}
                       required
+                      className="border border-gray-300 rounded-md p-2 w-full text-base"
                     />
                   </label>
                 </div>
-
-                <div style={{ display: "flex", gap: "10px" }}>
-                  <label>
-                    Gender:{" "}
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-1">
+                  <label className="block text-sm font-medium mb-1">
+                    Gender:
                     <select
                       name="gender"
                       value={formData.gender}
                       onChange={handleInputChange}
                       required
-                      style={{
-                        border: "1px solid black",
-                        borderRadius: "10px",
-                        padding: "4px 6px",
-                        textAlign: "center",
-                      }}
+                      className="border border-gray-300 rounded-md p-2 w-full text-base"
                     >
-                      <option value="" style={{ fontWeight: "bold" }}>
+                      <option value="" className="font-bold">
                         Select Gender
                       </option>
                       <option value="male">Male</option>
@@ -172,22 +181,18 @@ function Register() {
                       <option value="other">Other</option>
                     </select>
                   </label>
-                  <label>
-                    <span style={{ color: "white" }}>_________</span>
-                    Country:{" "}
+                </div>
+                <div className="flex-1">
+                  <label className="block text-sm font-medium mb-1">
+                    Country:
                     <select
                       name="country"
                       value={formData.country}
                       onChange={handleInputChange}
                       required
-                      style={{
-                        border: "1px solid black",
-                        borderRadius: "10px",
-                        padding: "4px 6px",
-                        textAlign: "center",
-                      }}
+                      className="border border-gray-300 rounded-md p-2 w-full text-base"
                     >
-                      <option value="" style={{ fontWeight: "bold" }}>
+                      <option value="" className="font-bold">
                         Select Country
                       </option>
                       <option value="Pakistan">Pakistan</option>
@@ -196,21 +201,18 @@ function Register() {
                       <option value="Other">Other</option>
                     </select>
                   </label>
-                  <label>
-                    <span style={{ color: "white" }}>_________</span>City:{" "}
+                </div>
+                <div className="flex-1">
+                  <label className="block text-sm font-medium mb-1">
+                    City:
                     <select
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
                       required
-                      style={{
-                        border: "1px solid black",
-                        borderRadius: "10px",
-                        padding: "4px 6px",
-                        textAlign: "center",
-                      }}
+                      className="border border-gray-300 rounded-md p-2 w-full text-base"
                     >
-                      <option value="" style={{ fontWeight: "bold" }}>
+                      <option value="" className="font-bold">
                         Select City
                       </option>
                       <option value="Lahore">Lahore</option>
@@ -219,34 +221,37 @@ function Register() {
                     </select>
                   </label>
                 </div>
-                <label>
-                  Address:
-                  <input
-                    type="text"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    required
+              </div>
+              <label className="block text-sm font-medium mb-1">
+                Address:
+                <input
+                  type="text"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleInputChange}
+                  required
+                  className="border border-gray-300 rounded-md p-2 w-full text-base"
+                />
+              </label>
+              {imagePreview && (
+                <div className="mb-4">
+                  <img
+                    src={imagePreview}
+                    alt="Preview"
+                    className="w-full h-auto object-cover rounded-md"
                   />
-                </label>
-
-                {imagePreview && (
-                  <div className="image-preview-container">
-                    <img
-                      src={imagePreview}
-                      alt="Preview"
-                      className="image-preview"
-                    />
-                  </div>
-                )}
-                <button type="submit" className="submit-button">
-                  Submit
-                </button>
-              </form>
-            </div>
+                </div>
+              )}
+              <button
+                type="submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 w-full stylish-button"
+              >
+                Submit
+              </button>
+            </form>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "../components/StylishButton.css";
+import Slider from "./Slider";
 
 function Body() {
   return (
@@ -262,6 +263,8 @@ function Body() {
             package with full transparency and detailed information.
           </p>
         </div>
+
+        <Slider />
       </div>
 
       <h1

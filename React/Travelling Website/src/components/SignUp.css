@@ -48,9 +48,51 @@ button {
 }
 
 button[type="button"].close-btn {
-  background: #dc3545;
+  background: linear-gradient(to top, #061f26, #0e4e60, #4e8ea0);
 }
 
 button[type="button"].close-btn:hover {
-  background: #c82333;
+  background: linear-gradient(to top, #061f26, #0e4e60, #4e8ea0);
+}
+
+@media (max-width: 268px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 280px) {
+  .modal-content {
+    width: 55%;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px;
+  }
 }

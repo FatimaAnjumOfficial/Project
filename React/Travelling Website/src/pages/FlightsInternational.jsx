@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { internationalFlights } from "../data/internationalFlights";
-import BookingModal from "../components/marketPlace/BookingModal";
+import BookingModal from "../components/booking/BookingModal";
 import "../components/StylishButton.css";
 import "./FlightsInternational.css";
 

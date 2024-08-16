@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./FlightsDomestic.css";
 import { domesticFlights } from "../data/domesticFlights";
-import BookingModal from "../components/marketPlace/BookingModal";
+import BookingModal from "../components/booking/BookingModal";
 import "../components/StylishButton.css";
+import "./FlightsDomestic.css";
 
 const FlightsDomestic = () => {
   const [search, setSearch] = useState({

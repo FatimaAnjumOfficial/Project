@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./StylishButton.css";
-import "./HomePage.css";
 
 function SignUp() {
   const [showModal, setShowModal] = useState(false);
@@ -40,7 +38,7 @@ function SignUp() {
 
         const reader = new FileReader();
         reader.onloadend = () => {
-          setImagePreview(reader.result); // Set the preview URL
+          setImagePreview(reader.result);
         };
         reader.readAsDataURL(file);
       } catch (error) {
@@ -69,81 +67,83 @@ function SignUp() {
 
   return (
     <>
-      <div>
-        <div style={{ display: "flex" }}>
-          <button onClick={() => setShowModal(true)} className="stylish-button">
-            Sign Up
-          </button>
-        </div>
-        {showModal && (
-          <div className="modal">
-            <div className="modal-content">
-              <span className="close" onClick={() => setShowModal(false)}>
-                &times;
-              </span>
-              <h2 style={{ textAlign: "center", fontSize: "25px", top: "0" }}>
-                <b>Sign Up</b>
-              </h2>
-              {error && <p className="error">{error}</p>}
-              <form onSubmit={handleSubmit}>
-                <label>
-                  Name:
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </label>
-                <label>
-                  Username:
-                  <input
-                    type="text"
-                    name="username"
-                    value={formData.username}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </label>
-                <label>
-                  Email:
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </label>
-                <label>
-                  Password:
-                  <input
-                    type="text"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </label>
-                <label>
-                  Confirm Password:
-                  <input
-                    type="text"
-                    name="c_password"
-                    value={formData.c_password}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </label>
-                <button type="submit" className="submit-button">
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        )}
+      <div className="flex justify-center">
+        <button onClick={() => setShowModal(true)} className="stylish-button">
+          Sign Up
+        </button>
       </div>
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-md relative">
+            <button onClick={() => setShowModal(false)}>&times;</button>
+            <h2 className="text-2xl font-bold text-center mb-4">Sign Up</h2>
+            {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="flex flex-col">
+                <label className="font-medium">Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="border border-gray-300 rounded-md p-2 text-base"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-medium">Username:</label>
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleInputChange}
+                  required
+                  className="border border-gray-300 rounded-md p-2 text-base"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-medium">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="border border-gray-300 rounded-md p-2 text-base"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-medium">Password:</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleInputChange}
+                  required
+                  className="border border-gray-300 rounded-md p-2 text-base"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="font-medium">Confirm Password:</label>
+                <input
+                  type="password"
+                  name="c_password"
+                  value={formData.c_password}
+                  onChange={handleInputChange}
+                  required
+                  className="border border-gray-300 rounded-md p-2 text-base"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 stylish-button "
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }

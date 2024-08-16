@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import HotelCard from "../components/marketPlace/HotelCard";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { hotels } from "../data/hotels";
 import "leaflet/dist/leaflet.css";
-import "./LuxuryHotels.css";
+import HotelCard from "../components/booking/HotelCard";
+import { hotels } from "../data/hotels";
 import { Search } from "../assets/Icons";
+import "./Hotels.css";
 import axios from "axios";
 
 const BookingForm = ({ hotel, onClose }) => {

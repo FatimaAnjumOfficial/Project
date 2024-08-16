@@ -1,6 +1,7 @@
 import { HomePage } from "../pages/HomePage";
 import { Layout } from "../layout/Layout";
 import LuxuryHotels from "../pages/LuxuryHotels";
+import BudgetHotels from "../pages/BudgetHotels";
 import FlightsDomestic from "../pages/FlightsDomestic";
 import FlightsInternational from "../pages/FlightsInternational";
 import ContactUs from "../pages/ContactUs";
@@ -18,6 +19,10 @@ export const routes = [
       {
         path: "/hotels/luxury-hotels",
         element: <LuxuryHotels />,
+      },
+      {
+        path: "/hotels/budget-hotels",
+        element: <BudgetHotels />,
       },
       {
         path: "/flights/domestic-flights",

@@ -1,7 +1,5 @@
 .home-page {
   padding: 20px;
-  /* display: flex;
-    flex-direction: column;*/
   border-radius: 8px;
   align-items: center;
 }
@@ -138,5 +136,5 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #a7284e;
-  transform: scale(1.05); /* Slightly enlarge button on hover */
+  transform: scale(1.05);
 }

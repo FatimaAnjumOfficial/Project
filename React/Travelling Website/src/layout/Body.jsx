@@ -1,6 +1,5 @@
 import React from "react";
 import "../components/StylishButton.css";
-import Slider from "./Slider";
 
 function Body() {
   return (
@@ -13,7 +12,7 @@ function Body() {
         textAlign: "center",
       }}
     >
-      <div className="image-container" style={{ marginBottom: "40px" }}>
+      <div style={{ marginBottom: "40px" }}>
         <img
           src="https://media.hanoitimes.vn/2023/07/18/Masteri_West_Height_project.png"
           alt="Beach Resort"
@@ -263,8 +262,6 @@ function Body() {
             package with full transparency and detailed information.
           </p>
         </div>
-
-        <Slider />
       </div>
 
       <h1
